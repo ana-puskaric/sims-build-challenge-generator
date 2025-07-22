@@ -4,6 +4,13 @@
                  "mediterranean","industrial","brutalist", "scandinavian", "japanese", "post-apocalyptic", 
                  "converted warehouse","built from scraps", "your choice"
             ],
+    "sims": ["1 sim", "2 sims (your choice)", "2 sims (siblings)", "2 sims (couple)", "2 sims (best friends)", "2 sims (roommates)", 
+                "3 sims (your choice)", "3 sims (1 kid)", "3 sims (roommates)", "3 sims (couple + roommate)", 
+                "family of 4 (2 kids)", "family of 5 (3 kids)", "family of 5 (1 elder, 2 kids)", "family of 6 (3 kids)",
+                "family of 4 (your choice)", "family of 5 (your choice)", "family of 6 (your choice)", "family of 7 (your choice)",
+                "family of 7 (2 elders)", "family of 7 (3 kids)", "family of 8 (your choice)", "family of 8 (4 elders)", 
+                "family of 8 (6 kids)"
+            ],
     "lotSize": ["20x45", "20x20", "30x20", "30x30", "40x30", "40x40", "50x40", "50x50", "64x64"],
     "must": ["a bunker", "a greenhouse", "a loft", "a tower", "open concept", "a platform", "an art/picture wall", 
                 "a pond", "a pool", "a garden", "a patio", "a rooftop patio", "a rooftop garden", "a gym", "an art studio",

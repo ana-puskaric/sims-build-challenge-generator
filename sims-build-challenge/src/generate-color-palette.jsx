@@ -10,7 +10,11 @@ const getRandomColor = () => {
 export const generateColorPalette = (setPalette) => {
     var colorPalette = [];
     for (var i = 0; i < 5; i++) {
-        colorPalette[i] = getRandomColor();
+        var color = getRandomColor();
+        while(colorPalette.includes(color)){
+          color = getRandomColor();
+        }
+        colorPalette[i] = color;
     }
     setPalette(colorPalette);
 }

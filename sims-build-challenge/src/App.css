@@ -1,6 +1,6 @@
 :root {
   --white: rgba(253, 249, 234, 0.918);
-  --whiteTransparant: rgba(253, 249, 234, 0.711);
+  --whiteTransparent: rgba(253, 249, 234, 0.711);
   --gray: rgb(51, 51, 51);
   --lightgray: rgb(203, 202, 202);
 }
@@ -44,7 +44,7 @@ body {
   padding: 15px;
   margin: 20px auto;
   overflow: hidden;
-  background-color: var(--whiteTransparant);
+  background-color: var(--whiteTransparent);
   color:var(--gray);
   min-height: 45vh;
 }

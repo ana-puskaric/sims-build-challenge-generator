@@ -8,27 +8,23 @@ export default function Challenge(){
         generateColorPalette(setPalette);
     }, []);
 
-    function getRandomPositiveInt (max) {
-        return Math.floor(Math.random() * max) + 1;
-    }
-
-    function getRandomIndex (max) {
-         return Math.floor(Math.random() * max);
+    function getRandomItem (array) {
+         return array[Math.floor(Math.random() * array.length)];
     }
 
     function getRandomIntInRange (min, max) {
-        return Math.floor(Math.random() * (max - min) + min);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     const generateChallenge = () => ({
-        floors: getRandomPositiveInt(4),
-        rooms: getRandomPositiveInt(10),
-        style: data.style[getRandomIndex(data.style.length)],
-        sims: data.sims[getRandomIndex(data.sims.length)],
-        lotSize: data.lotSize[getRandomIndex(data.lotSize.length)],
-        budget: getRandomIntInRange(10000, 100000),
-        must: data.must[getRandomIndex(data.must.length)],
-        optional: data.optional[getRandomIndex(data.optional.length)],
+        floors: getRandomIntInRange(1, 4),
+        rooms: getRandomIntInRange(1, 10),
+        style: getRandomItem(data.style),
+        sims: getRandomItem(data.sims),
+        lotSize: getRandomItem(data.lotSize),
+        budget: getRandomIntInRange(12000, 100000),
+        must: getRandomItem(data.must),
+        optional: getRandomItem(data.optional),
     });
 
     const [challenge, setChallenge] = useState(generateChallenge);
@@ -40,8 +36,16 @@ export default function Challenge(){
     return(
         <div className="generate-container">
             <div className="challenge-container">
-                <p>{`Create a ${challenge.floors} story, ${challenge.rooms} room ${challenge.style} style house for ${challenge.sims} 
-                    on a ${challenge.lotSize} lot with a budget of ${challenge.budget}. You must include ${challenge.must}.`}
+                <p>Create a 
+                <span> {challenge.floors}</span> story,
+                <span> {challenge.rooms}</span> room 
+                <span> {challenge.style}</span> style house for 
+                <span> {challenge.sims}</span> on a 
+                <span> {challenge.lotSize}</span> lot with a budget of 
+                <span> {challenge.budget}</span>. 
+                </p>
+                <p>You must include: 
+                <span> {challenge.must}</span>.
                 </p>
                 <p>This is your color palette:</p>
                 <div className="palette-container">
@@ -53,7 +57,7 @@ export default function Challenge(){
                     />
                 ))}
                 </div>
-                <p>Make it more difficult: {challenge.optional}.</p>
+                <p>Make it more difficult: <span>{challenge.optional}</span>.</p>
             </div>
             <div className="generate-btn-container">
                 <button onClick={handleClick}>Generate New Challenge</button>
